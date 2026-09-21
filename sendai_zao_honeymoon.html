@@ -1,0 +1,227 @@
+from pathlib import Path
+
+html = r'''<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f3ee">
+<title>新婚旅行｜仙台・松島・秋保・蔵王 4泊5日</title>
+<style>
+:root{
+  --bg:#f7f3ee; --card:#fff; --text:#2f2d2a; --muted:#77716b;
+  --accent:#8b6f47; --accent2:#6d8b74; --line:#e8e0d7;
+  --danger:#a6534d; --blue:#557b9a; --shadow:0 4px 18px rgba(70,50,30,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Yu Gothic",sans-serif;line-height:1.65}
+header{padding:28px 18px 22px;background:linear-gradient(135deg,#eee5d8,#f8f4ee);text-align:center}
+h1{font-size:24px;margin:0 0 5px}
+.subtitle{color:var(--muted);font-size:13px}
+.container{max-width:760px;margin:auto;padding:14px}
+.sticky{position:sticky;top:0;z-index:20;background:rgba(247,243,238,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);overflow-x:auto}
+.nav{display:flex;gap:7px;padding:9px 10px;min-width:max-content}
+.nav a{color:var(--text);text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-size:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}
+h2{font-size:20px;margin:0 0 4px}
+h3{font-size:16px;margin:18px 0 7px}
+.day-title{display:flex;align-items:center;gap:9px}
+.day-title .emoji{font-size:25px}
+.theme{font-size:13px;color:var(--muted);margin-bottom:12px}
+.alert{border-left:4px solid var(--danger);background:#fff6f4;padding:12px 13px;border-radius:10px;margin:10px 0}
+.alert strong{color:var(--danger)}
+.ok{border-left:4px solid var(--accent2);background:#f4f8f4;padding:12px 13px;border-radius:10px}
+.timeline{list-style:none;margin:0;padding:0}
+.timeline li{display:grid;grid-template-columns:82px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid #eee}
+.timeline li:last-child{border-bottom:0}
+.time{font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.note{font-size:12px;color:var(--muted);margin-top:2px}
+.choice{border:1px solid var(--line);border-radius:13px;padding:12px;margin:9px 0;background:#fffdfa}
+.choice b{display:block;margin-bottom:3px}
+.tag{display:inline-block;font-size:11px;border-radius:999px;padding:2px 7px;background:#eee7de;color:#69583f;margin-left:4px}
+.tag.red{background:#fae8e5;color:#934a43}
+.tag.green{background:#e7f0e9;color:#50705a}
+.checklist{padding-left:21px}
+.checklist li{margin:7px 0}
+.small{font-size:12px;color:var(--muted)}
+details{margin-top:10px}
+summary{cursor:pointer;font-weight:700}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:25px 10px 40px}
+@media(max-width:430px){
+  .container{padding:9px}
+  .card{padding:14px;border-radius:14px}
+  h1{font-size:22px}
+  .timeline li{grid-template-columns:74px 1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🌿 新婚旅行 4泊5日</h1>
+  <div class="subtitle">仙台・松島 → 秋保温泉 → 山形・蔵王 → 東京</div>
+</header>
+
+<div class="sticky">
+  <nav class="nav">
+    <a href="#important">絶対時間</a><a href="#day1">9/22</a><a href="#day2">9/23</a><a href="#day3">9/24</a><a href="#day4">9/25</a><a href="#day5">9/26</a><a href="#luggage">荷物</a>
+  </nav>
+</div>
+
+<main class="container">
+<section class="card" id="important">
+  <h2>🚨 絶対に遅れない時間</h2>
+  <p class="small">それ以外は多少前後してOK。旅行中は余裕を持って楽しむ！</p>
+  <ol class="checklist">
+    <li><b>9/22 10:00</b> 🚄 東京駅 発</li>
+    <li><b>9/23 15:00</b> 🚌 仙台駅東口 発 → 緑水亭 <span class="tag red">要予約</span></li>
+    <li><b>9/24 14:00</b> 🚌 山形駅西口 発 → 蔵王国際ホテル <span class="tag red">要予約</span></li>
+    <li><b>9/25 午前</b> 🚡 蔵王ロープウェイ（天候優先）</li>
+    <li><b>9/26 13:00</b> 🚌 蔵王温泉 発 → 山形駅 <span class="tag red">要予約</span></li>
+  </ol>
+</section>
+
+<section class="card" id="day1">
+  <div class="day-title"><span class="emoji">🌊</span><h2>9月22日（火）1日目</h2></div>
+  <div class="theme">仙台牛タン ＆ 松島クルーズ</div>
+
+  <div class="alert"><strong>まず荷物をどうする？</strong><br>仙台駅到着後、①駅で預ける or ②ホテルへ預ける、どちらでもOK。</div>
+
+  <div class="choice">
+    <b>① 🧳 駅で預ける</b>
+    仙台駅の手荷物預かり所・コインロッカーへ → そのまま牛タン → 松島。
+    <div class="note">移動が少なく、いちばんサクッと動ける。帰仙後に荷物を回収してホテルへ。</div>
+  </div>
+  <div class="choice">
+    <b>② 🏨 ホテルへ預ける</b>
+    ホテルベルエア仙台へ徒歩約12分 → 荷物を預ける → 仙台駅へ戻る。
+    <div class="note">松島を完全に手ぶらで歩ける。往復の徒歩時間を見込む。</div>
+  </div>
+
+  <ul class="timeline">
+    <li><span class="time">10:00</span><span>🚄 東京駅 発</span></li>
+    <li><span class="time">11:40</span><span>仙台駅 着</span></li>
+    <li><span class="time">11:40〜12:15</span><span>🧳 荷物を預ける（駅 or ホテル）</span></li>
+    <li><span class="time">12:15〜13:15</span><span>🥩 牛タン昼食<br><span class="note">候補：たんや善治郎 仙台駅3階 牛たん通り店。席予約不可なので混雑時は時間に余裕を。</span></span></li>
+    <li><span class="time">13:30頃</span><span>🚃 JR仙石線 仙台 → 松島海岸</span></li>
+    <li><span class="time">14:15頃</span><span>🌊 松島海岸駅 着・観光開始</span></li>
+    <li><span class="time">14:30〜</span><span>🚢 <b>遊覧船：乗れそうなら乗る</b><br><span class="note">便・混雑・天候を現地で確認。乗れなければ散策へ。</span></span></li>
+    <li><span class="time">15:30〜17:30</span><span>🚶 五大堂 → 福浦橋 → 海沿い散策・お茶</span></li>
+    <li><span class="time">17:30頃</span><span>🚃 松島海岸 → 仙台</span></li>
+    <li><span class="time">18:30頃</span><span>🏨 ホテルベルエア仙台 チェックイン<br><span class="note">駅預けの場合は仙台駅で荷物回収後にホテルへ。</span></span></li>
+    <li><span class="time">19:30頃〜</span><span>🍴 仙台市内でディナー</span></li>
+  </ul>
+  <div class="ok"><b>💡 時間があれば候補</b><br>瑞巌寺・観瀾亭・松島離宮・カフェ・食べ歩き。全部行かなくてOK！</div>
+</section>
+
+<section class="card" id="day2">
+  <div class="day-title"><span class="emoji">♨️</span><h2>9月23日（水）2日目</h2></div>
+  <div class="theme">あえて何もしない贅沢・秋保温泉</div>
+  <ul class="timeline">
+    <li><span class="time">08:00〜11:00</span><span>☀️ 朝食・ゆっくり身支度</span></li>
+    <li><span class="time">11:00〜13:00</span><span>🚶 仙台駅周辺でランチ ＆ お土産</span></li>
+    <li><span class="time">13:00〜14:15</span><span>☕ カフェでまったり</span></li>
+    <li><span class="time">14:15</span><span>🏨 ホテルで荷物を受け取る</span></li>
+    <li><span class="time">14:40</span><span>🚌 仙台駅東口の送迎バス乗り場へ</span></li>
+    <li><span class="time">15:00</span><span>🚌 <b>仙台駅東口 発 → 緑水亭</b> <span class="tag red">要予約</span></span></li>
+    <li><span class="time">16:00頃</span><span>🏨 緑水亭 チェックイン</span></li>
+    <li><span class="time">16:30〜</span><span>🌳 庭園散策</span></li>
+    <li><span class="time">17:00〜</span><span>♨️ 夕食前の温泉</span></li>
+    <li><span class="time">18:00〜</span><span>🍴 旅館の夕食</span></li>
+  </ul>
+  <div class="ok"><b>💡 この日は観光を詰め込まない。</b><br>「温泉を楽しむ日」と割り切るのが今回の旅のポイント。</div>
+</section>
+
+<section class="card" id="day3">
+  <div class="day-title"><span class="emoji">🚃</span><h2>9月24日（木）3日目</h2></div>
+  <div class="theme">宮城から山形へ、名湯のハシゴ旅</div>
+  <ul class="timeline">
+    <li><span class="time">07:30〜09:30</span><span>☀️ 朝食 → 朝風呂 → 荷造り</span></li>
+    <li><span class="time">10:00</span><span>🚌 緑水亭 発 → 仙台駅</span></li>
+    <li><span class="time">11:00頃</span><span>仙台駅 着</span></li>
+    <li><span class="time">11:15頃</span><span>🚃 JR仙山線 → 山形駅</span></li>
+    <li><span class="time">12:30頃</span><span>山形駅 着</span></li>
+    <li><span class="time">12:35</span><span>🧳 <b>コインロッカーへスーツケースを預ける</b></span></li>
+    <li><span class="time">12:45〜13:35</span><span>🍜 山形駅周辺でランチ</span></li>
+    <li><span class="time">13:40</span><span>🧳 荷物を回収 → 山形駅西口へ</span></li>
+    <li><span class="time">14:00</span><span>🚌 <b>山形駅西口 発 → 蔵王国際ホテル</b> <span class="tag red">要予約</span></span></li>
+    <li><span class="time">14:40頃</span><span>🏔 蔵王温泉 着</span></li>
+    <li><span class="time">15:00頃</span><span>🏨 蔵王国際ホテル チェックイン</span></li>
+    <li><span class="time">16:00〜</span><span>♨️ 「八右衛門の湯」で硫黄泉</span></li>
+    <li><span class="time">18:00〜</span><span>🍴 山形牛など夕食</span></li>
+  </ul>
+  <div class="alert"><strong>14:00の送迎を最優先。</strong><br>山形駅に着いたら、まず荷物を預けて身軽にしてから昼食。13:40頃には必ず荷物を回収して西口へ。</div>
+</section>
+
+<section class="card" id="day4">
+  <div class="day-title"><span class="emoji">🏔️</span><h2>9月25日（金）4日目</h2></div>
+  <div class="theme">お天気優先！蔵王ロープウェイ＆温泉街デート</div>
+
+  <div class="choice">
+    <b>☀️ 晴れ・山頂が見える → ロープウェイ優先</b>
+    <ul class="timeline">
+      <li><span class="time">07:30〜08:30</span><span>朝食</span></li>
+      <li><span class="time">09:00</span><span>🏨 ホテル出発</span></li>
+      <li><span class="time">09:15〜11:30</span><span>🚡 蔵王ロープウェイ → 地蔵山頂駅</span></li>
+      <li><span class="time">12:00</span><span>🍴 温泉街でランチ</span></li>
+      <li><span class="time">13:00〜15:00</span><span>🚶 温泉街散策・お土産・足湯など</span></li>
+      <li><span class="time">15:00</span><span>🏨 ホテルへ戻る</span></li>
+      <li><span class="time">16:00〜</span><span>♨️ ゆったり夕方の温泉</span></li>
+      <li><span class="time">18:00頃〜</span><span>🍴 夕食</span></li>
+    </ul>
+  </div>
+
+  <div class="choice">
+    <b>☁️☔ 雨・霧・山頂が真っ白 → 温泉街ごもり</b>
+    <ul class="checklist">
+      <li>温泉街をゆっくり散策</li>
+      <li>☕ カフェで休憩</li>
+      <li>♨️ 共同浴場・大露天風呂など</li>
+      <li>🛍 お土産探し</li>
+      <li>🏨 午後はホテルで温泉</li>
+    </ul>
+  </div>
+  <div class="ok"><b>💡 天気が微妙なら無理しない。</b><br>蔵王2泊なので、ロープウェイを見送って温泉中心にしてもOK。</div>
+</section>
+
+<section class="card" id="day5">
+  <div class="day-title"><span class="emoji">🌿</span><h2>9月26日（土）5日目</h2></div>
+  <div class="theme">手ぶらで最後の散策 → 東京へ</div>
+  <ul class="timeline">
+    <li><span class="time">07:30〜09:30</span><span>☀️ 朝食 → 最後の朝風呂 → 荷造り</span></li>
+    <li><span class="time">10:00</span><span>🏨 チェックアウト</span></li>
+    <li><span class="time">10:00〜12:00</span><span>🚶 荷物をホテルに預けて温泉街散策</span></li>
+    <li><span class="time">12:15</span><span>🏨 ホテルへ戻る → 荷物回収</span></li>
+    <li><span class="time">13:00</span><span>🚌 <b>蔵王温泉 発 → 山形駅</b> <span class="tag red">要予約</span></span></li>
+    <li><span class="time">13:40</span><span>山形駅 着</span></li>
+    <li><span class="time">14:00〜</span><span>🍒 お土産・軽めのランチ・カフェ</span></li>
+    <li><span class="time">午後</span><span>🚄 山形新幹線「つばさ」→ 東京</span></li>
+  </ul>
+  <div class="alert"><strong>9/26の荷物預かりは事前確認。</strong><br>チェックアウト後、13時の送迎までホテルで預かってもらえるか確認しておく。</div>
+</section>
+
+<section class="card" id="luggage">
+  <h2>🧳 荷物の動き</h2>
+  <ol class="checklist">
+    <li><b>9/22：</b>仙台駅ロッカー or ホテルベルエア仙台</li>
+    <li><b>9/23：</b>ホテルから荷物を持って秋保・緑水亭へ</li>
+    <li><b>9/24：</b>山形駅コインロッカー → 回収 → 蔵王国際ホテル</li>
+    <li><b>9/25：</b>蔵王国際ホテルの部屋に置いておく</li>
+    <li><b>9/26：</b>チェックアウト後、ホテルに預けられるか確認 → 13時前に回収</li>
+  </ol>
+</section>
+
+<section class="card">
+  <h2>🎒 旅行中のルール</h2>
+  <ul class="checklist">
+    <li>時間が余ったら観光。<b>無理に予定を追加しない。</b></li>
+    <li>遊覧船・ロープウェイは<b>天気と混雑を見て決定</b>。</li>
+    <li>送迎バスの時間だけは最優先。</li>
+    <li>疲れたらカフェ・温泉・ホテルへ戻る。新婚旅行なのでゆっくり！</li>
+  </ul>
+</section>
+</main>
+
+<footer>Have a wonderful honeymoon 🌿♨️🌊🏔️</footer>
+</body>
+</html>'''
